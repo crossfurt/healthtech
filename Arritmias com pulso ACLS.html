@@ -1,0 +1,62 @@
+<!doctype html>
+<meta charset = "UTF-8">
+<body style = "background-color:black", text="FFFFFF">
+<script>
+var freq = prompt("A frequência cardíaca está alta ou baixa?");
+while (freq != "alta" && freq != "baixa") {
+       alert ("Por favor digite:\r\nalta\r\nou\r\nbaixa")
+      freq = prompt("A frequência cardíaca está alta ou baixa?")};
+if (freq == "baixa"){
+var code = 0;
+var bradicardia = prompt("A frequência cardíaca é menor do que 50 bpm?\r\nDigite S ou N");
+while (bradicardia != "S" && bradicardia != "N") 
+    {var bradicardia = prompt("A frequência cardíaca é menor do que 50 bpm?\r\nDigite S ou N")};
+if (bradicardia == "S"){
+    alert("Administre O2 suplementar caso a SpO2 seja <94% \r\nMonitore ritmo cardíaco, PA e SpO2\r\nObtenha acesso venoso\r\nObtenha um ECG de 12 derivações");
+code = 1};
+if (bradicardia == "N") {
+    alert("Não há bradicardia")};
+if (code == 1){
+    var instab = prompt("Há sinal de instabilidade?\r\n(Hipotensão, rebaixamendo do nível de consciência, insuficiência cardíaca, dor torácica)\r\nResponda S ou N")
+     while (instab != "S" && instab != "N") 
+    {var instab = prompt("Há sinal de instabilidade?\r\n(Hipotensão, rebaixamendo do nível de consciência, insuficiência cardíaca, dor torácica)\r\nResponda S ou N")};
+    if (instab == "S") {
+    alert("Administre atropina\r\nInicie com 0.5 mg.\r\nRepita a cada 3-5 min até melhora ou total de 3 mg.");
+        code = 2}
+    if (instab == "N") {
+        alert("Monitore e observe")}      
+             }
+if (code == 2) {
+    var atrop = prompt("Atropina foi efetiva?\r\nResponda S ou N")
+    while (atrop != "S" && atrop != "N")    {atrop = prompt("Atropina foi efetiva?\r\nResponda S ou N")}
+    if (atrop == "S"){
+        alert("Monitore e observe")}
+    if (atrop == "N") {
+        alert("Providencie um marcapasso transcutâneo \r\n ou \r\n Considere infusão de dopamina (2-10 mcg/kg/min) ou adrenalina (2-10 mcg/kg/min)")
+        alert("Solicite parecer de especialista e marcapasso transvenoso")}
+}       
+}
+if (freq == "alta"){
+    alert("Taquiarritmias sintomáticas comumente cursam com frequencia maior que 150 bpm")
+    alert("Administre O2 suplementar caso a SpO2 seja <94% \r\nMonitore ritmo cardíaco, PA e SpO2\r\nMantenha a via aérea patente e auxilie na respiração caso necessário")
+    var instab = prompt("Há sinal de instabilidade?\r\n(Hipotensão, rebaixamendo do nível de consciência, insuficiência cardíaca, dor torácica)\r\nResponda S ou N")
+     while (instab != "S" && instab != "N") 
+    {var instab = prompt("Há sinal de instabilidade?\r\n(Hipotensão, rebaixamendo do nível de consciência, insuficiência cardíaca, dor torácica)\r\nResponda S ou N")};
+    if (instab == "S") {
+    alert("Cardioversão sincronizada indicada\r\nConsidere sedação\r\nConsidere adenosina se QRS estreito e regular");
+                        }
+    if (instab == "N") {
+        var wideQRS = prompt("QRS > 120 ms?\r\nResponda S ou N")
+    while (wideQRS != "S" && wideQRS != "N"){
+        alert("Por favor, responda S ou N")
+        var wideQRS = prompt("QRS > 120 ms?\r\nResponda S ou N")}
+    if (wideQRS == "S"){
+        alert("Obtenha acesso venoso e um ECG de 12 derivações\r\nSe QRS regular e monomórfico, considere adenosina\r\nConsidere infusão de antiarrítmico\r\nSolicite parecer de especialista caso julgue necessário")}
+    if (wideQRS == "N") {
+        alert("Obtenha acesso venoso e um ECG de 12 derivações\r\nRealize manobra vagal\r\nAdministre beta-bloqueador ou bloqueador de canal de potássio\r\nConsidere adenosina se QRS regular\r\nSolicite parecer de especialista caso julgue necessário")}
+                    }
+                    }
+        
+document.write("Obrigado por concluir o teste da versão alpha<br>Seu feedback será muito útil")
+</script>
+</body>
